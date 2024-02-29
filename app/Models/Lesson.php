@@ -7,6 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Lesson extends Model
 {
+    
+    protected $guarded = ['id'];
+    
     use HasFactory;
 
     //Relacion de uno a uno

@@ -7,6 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Course extends Model
 {
+    
+    protected $guarded = ['id, status'];
+
     use HasFactory;
 
     const BORRADOR = 1;

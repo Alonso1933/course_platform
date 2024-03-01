@@ -25,3 +25,11 @@ Route::middleware([
         return view('dashboard');
     })->name('dashboard');
 });
+
+Route::get('cursos', function() {
+    return "Aquí estarán los cursos";
+})->name('course.index');
+
+Route::get('cursos/{course}', function($course) {
+    return "Aqui estara la info del curso";
+})->name('course.show');

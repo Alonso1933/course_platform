@@ -82,12 +82,13 @@
         <p class="text-center text-white">Dirígete al catálogo de cursos y filtralos por categoría o nivel</p>
 
         <div class="flex justify-center mt-4">
-            <a href="{{ route('course.index') }}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+            <a href="{{ route('courses.index') }}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
                 Catálogo de cursos
             </a>
         </div>
     </section>
 
+    {{-- Section: Ultimos cursos --}}
     <section class="my-24">
         <h1 class="text-center text-3xl text-gray-600">ÚLTIMOS CURSOS</h1>
         <p class="text-center text-gray-500 text-sm mb-6">Seguimos trabajando duro para seguir subiendo cursos</p>
@@ -113,7 +114,7 @@
                             <p class="text-sm text-gray-500 ml-auto"> <i class="fas fa-users"></i> ({{$course->students_count}})  </p>
                         </div>
 
-                        <a href="{{route('course.show', $course)}}" class="block text-center w-full mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                        <a href="{{route('courses.show', $course)}}" class="block text-center w-full mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
                             Más información
                         </a>
                     </div>

@@ -94,11 +94,19 @@
                         </div>
                     </div>
 
-                    <a href="" class="btn btn-danger btn-block mt-4">Llevar este curso</a>
+                    @can('enrolled', $course)
+                        <a href="{{route('course.status', $course)}}" class="btn btn-danger btn-block mt-4">Continuar con el curso</a>
+                    @else
+                        <form action="{{route('courses.enrolled', $course)}}" method="POST">
+                            @csrf
+                            <button class="btn btn-danger btn-block mt-4">Llevar este curso</button>
+                        </form>    
+                    @endcan
 
                 </div>
             </section>
 
+            {{-- Cursos sugeridos --}}
             <aside class="hidden lg:block">
                 @foreach ($similares as $similar)
                     <article class="flex mb-6">

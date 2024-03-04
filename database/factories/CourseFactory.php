@@ -29,7 +29,7 @@ class CourseFactory extends Factory
         return [
             'title' => $title,
             'subtitle' => $this->faker->sentence(),
-            'description' => $this->faker->sentence(),
+            'description' => $this->faker->paragraph(),
             'status' => $this->faker->randomElement([Course::BORRADOR, Course::REVISION, Course::PUBLICADO]),
             'slug' => Str::slug($title),
             'user_id' => User::all()->random()->id,

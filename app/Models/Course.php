@@ -48,19 +48,19 @@ class Course extends Model
     }
 
     public function audiences() {
-        return $this->hasMany('App\Model\Audience');
+        return $this->hasMany('App\Models\Audience');
     }
 
     public function goals() {
-        return $this->hasMany('App\Model\Goal');
+        return $this->hasMany('App\Models\Goal');
     }
 
     public function requirements() {
-        return $this->hasMany('App\Model\Requirement');
+        return $this->hasMany('App\Models\Requirement');
     }
 
     public function sections() {
-        return $this->hasMany('App\Model\Section');
+        return $this->hasMany('App\Models\Section');
     }
 
     //Relacion muchos a uno inversa

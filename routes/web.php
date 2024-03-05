@@ -35,4 +35,4 @@ Route::post('cursos/{course}/enrolled', [CourseController::class, 'enrolled'])->
 
 Route::get('curso/{course}/status', function ($course) {
     return "Aqui vas a poder llevar el control de tu avance.";
-})->name('course.status');
+})->name('courses.status');

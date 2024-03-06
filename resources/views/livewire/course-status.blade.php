@@ -1,7 +1,7 @@
 {{-- Nothing in the world is as soft and yielding as water. --}}
 <div class="mt-8">
     <div class="container grid grid-cols-1 lg:grid-cols-3 gap-8">
-        <div class="col-span-2">
+        <div class="lg:col-span-2">
             
             <div class="embed-responsive">
                 {!!$current->iframe!!}

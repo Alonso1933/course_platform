@@ -318,7 +318,7 @@ return [
         ],
         [
             'text'        => 'Lista de roles',
-            'route'         => 'roles.index',
+            'route'         => 'admin.roles.index',
             'icon'        => 'fas fa-fw fa-user-cog',
         ],
         ['header' => 'account_settings'],

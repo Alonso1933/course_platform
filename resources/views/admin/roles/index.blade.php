@@ -9,8 +9,11 @@
 @section('content')
 
     @if (session('info'))
-        <div class="alert alert-primary" role="alert">
-            <strong>¡Éxito!</strong> Se ha creado el rol satisfactoriamente
+        <div class="alert alert-primary alert-dismissible" role="alert">
+            <button type="button" class="close " data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            <strong>¡Éxito!</strong> {{session('info')}}
         </div>
     @endif
 

@@ -7,17 +7,17 @@
 @stop
 
 @section('content')
-<div class="card">
-    <div class="card-body">
-        {!! Form::model($role, ['route'=>['admin.roles.update', $role], 'method' => 'PUT']) !!}
-            
-            @include('admin.roles.partials.form')
+    <div class="card">
+        <div class="card-body">
+            {!! Form::model($role, ['route'=>['admin.roles.update', $role], 'method' => 'PUT']) !!}
+                
+                @include('admin.roles.partials.form')
 
-            {!! Form::submit('Actualizar rol', ['class'=>'btn btn-primary mt-2']) !!}
-            
-        {!! Form::close() !!}
+                {!! Form::submit('Actualizar rol', ['class'=>'btn btn-primary mt-2']) !!}
+                
+            {!! Form::close() !!}
+        </div>
     </div>
-</div>
 @stop
 
 @section('css')

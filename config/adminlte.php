@@ -322,6 +322,12 @@ return [
             'icon'        => 'fas fa-fw fa-user-cog',
             'active'    => ['admin/roles*']
         ],
+        [
+            'text'        => 'Usuarios',
+            'route'         => 'admin.users.index',
+            'icon'        => 'fas fa-fw fa-users',
+            'active'    => ['admin/users*']
+        ],
         ['header' => 'account_settings'],
         [
             'text' => 'profile',
@@ -541,5 +547,5 @@ return [
     |
     */
 
-    'livewire' => false,
+    'livewire' => true,
 ];

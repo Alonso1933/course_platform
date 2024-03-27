@@ -90,9 +90,7 @@
                             </td>
 
                             <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                                <p class="text-gray-900 whitespace-no-wrap">
-                                    43
-                                </p>
+                                <a href="{{route('instructor.courses.edit', $course)}}" class="text-indigo-600 hover:text-indigo-900 hover:font-semibold">Editar</a>
                             </td>
                         </tr>
                     @endforeach

@@ -1,8 +1,10 @@
 {{-- Be like water. --}}
 <div class="container py-4">
     <x-table-responsive>
-        <div class="px-6 py-4">
-            <input wire:model.live="search" wire:keydown="cleanPage" class="form-control w-full" placeholder="Buscar curso(s), ej.: English 1">
+        <div class="px-6 py-4 flex">
+            <input wire:model.live="search" wire:keydown="cleanPage" class="form-control flex-1" placeholder="Buscar curso(s), ej.: English 1">
+
+            <a href="{{route('instructor.courses.create')}}" class="btn btn-danger ml-2">Crear nuevo curso</a>
         </div>
 
         @if ($courses->count())

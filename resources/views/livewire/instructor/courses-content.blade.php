@@ -46,12 +46,16 @@
                     <h3 class="text-xl font-bold mb-4">Agregar nueva sección</h3>
                     
                     <div class="mb-4">
-                        <input class="form-input-css" placeholder="Escriba el nombre de la sección">
+                        <input wire:model.live="name" class="form-input-css" placeholder="Escriba el nombre de la sección">
+
+                        @error('name')
+                            <span class="text-xs text-red-500">{{$message}}</span>
+                        @enderror
                     </div>
 
                     <div class="flex justify-end">
                         <button class="btn btn-danger" x-on:click="open = false"">Cancelar</button>
-                        <button class="btn btn-primary ml-2">Agregar</button>
+                        <button class="btn btn-primary ml-2" wire:click="store">Agregar</button>
                     </div>
                 </div>
             </article>

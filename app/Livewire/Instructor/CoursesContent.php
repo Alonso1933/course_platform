@@ -8,7 +8,7 @@ use Livewire\Component;
 
 class CoursesContent extends Component
 {
-    public $course, $section;
+    public $course, $section, $name;
 
     protected $rules = [
         'section.name' => 'required'
@@ -22,6 +22,21 @@ class CoursesContent extends Component
     public function render()
     {
         return view('livewire.instructor.courses-content')->layout('layouts.instructor');
+    }
+
+    public function store(){
+        $this->validate([
+            'name' => 'required'
+        ]);
+
+        Section::create([
+            'name' => $this->name,
+            'course_id' => $this->course->id
+        ]);
+
+        $this->reset('name');
+
+        $this->course = Course::find($this->course->id);
     }
 
     public function edit(Section $section) {

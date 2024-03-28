@@ -27,4 +27,13 @@ class CoursesContent extends Component
     public function edit(Section $section) {
         $this->section = $section;
     }
+
+    public function update(){
+        $this->validate();
+
+        $this->section->save();
+        $this->section = new Section();
+
+        $this->course = Course::find($this->course->id);
+    }
 }

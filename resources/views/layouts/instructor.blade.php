@@ -31,10 +31,10 @@
         
                     <ul class="text-sm text-gray-600">
                         <li class="leading-7 mb-1 border-l-4 border-indigo-400 pl-2">
-                            <a href="">Información del curso</a>
+                            <a href="{{route('instructor.courses.edit', $course)}}">Información del curso</a>
                         </li>
                         <li class="leading-7 mb-1 border-l-4 border-transparent pl-2">
-                            <a href="">Lecciones del curso</a>
+                            <a href="{{route('instructor.courses.content', $course)}}">Lecciones del curso</a>
                         </li>
                         <li class="leading-7 mb-1 border-l-4 border-transparent pl-2">
                             <a href="">Metas del curso</a>

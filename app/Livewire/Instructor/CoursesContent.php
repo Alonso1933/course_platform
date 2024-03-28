@@ -51,4 +51,10 @@ class CoursesContent extends Component
 
         $this->course = Course::find($this->course->id);
     }
+
+    public function destroy(Section $section){
+        $section->delete();
+        
+        $this->course = Course::find($this->course->id);
+    }
 }

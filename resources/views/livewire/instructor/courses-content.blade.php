@@ -27,7 +27,7 @@
 
                             <div>
                                 <i class="fas fa-edit cursor-pointer text-blue-500" wire:click="edit({{$item}})"></i>
-                                <i class="fas fa-eraser cursor-pointer text-red-500"></i>
+                                <i class="fas fa-eraser cursor-pointer text-red-500" wire:click="destroy({{$item}})""></i>
                             </div>
                         </header>
                     @endif

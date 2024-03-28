@@ -34,7 +34,11 @@
                             <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm"> {{-- Nombre curso --}}
                                 <div class="flex items-center">
                                     <div class="flex-shrink-0 w-10 h-10">
-                                        <img class="w-full h-full rounded-full" src="{{Storage::url($course->image->url)}}" alt="" />
+                                        @isset($course->image)
+                                            <img id="picture" src="{{Storage::url($course->image->url)}}" alt="$course->name" class="w-full h-full rounded-md object-cover object-center">
+                                        @else
+                                        <img id="picture" src="https://images.pexels.com/photos/3769118/pexels-photo-3769118.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="$course->name" class="w-full h-full rounded-md object-cover object-center">
+                                        @endisset
                                     </div>
                                     <div class="ml-3">
                                         <div class="text-sm font-medium text-gray-900 whitespace-no-wrap">

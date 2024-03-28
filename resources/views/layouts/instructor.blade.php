@@ -30,10 +30,10 @@
                     <h1 class="font-bold text-lg mb-4">Edición del curso</h1>
         
                     <ul class="text-sm text-gray-600">
-                        <li class="leading-7 mb-1 border-l-4 border-indigo-400 pl-2">
+                        <li class="leading-7 mb-1 border-l-4 @routeIs('instructor.courses.edit', $course) border-indigo-500 @else border-transparent @endif pl-2">
                             <a href="{{route('instructor.courses.edit', $course)}}">Información del curso</a>
                         </li>
-                        <li class="leading-7 mb-1 border-l-4 border-transparent pl-2">
+                        <li class="leading-7 mb-1 border-l-4 @routeIs('instructor.courses.content', $course) border-indigo-500 @else border-transparent @endif pl-2">
                             <a href="{{route('instructor.courses.content', $course)}}">Lecciones del curso</a>
                         </li>
                         <li class="leading-7 mb-1 border-l-4 border-transparent pl-2">

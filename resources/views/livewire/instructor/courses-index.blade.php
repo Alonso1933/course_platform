@@ -35,9 +35,9 @@
                                 <div class="flex items-center">
                                     <div class="flex-shrink-0 w-10 h-10">
                                         @isset($course->image)
-                                            <img id="picture" src="{{Storage::url($course->image->url)}}" alt="$course->name" class="w-full h-full rounded-md object-cover object-center">
+                                            <img id="picture" src="{{Storage::url($course->image->url)}}" alt="{{$course->title}}" class="w-full h-full rounded-md object-cover object-center">
                                         @else
-                                        <img id="picture" src="https://images.pexels.com/photos/3769118/pexels-photo-3769118.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="$course->name" class="w-full h-full rounded-md object-cover object-center">
+                                            <img id="picture" src="https://images.pexels.com/photos/3769118/pexels-photo-3769118.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="{{$course->title}}" class="w-full h-full rounded-md object-cover object-center">
                                         @endisset
                                     </div>
                                     <div class="ml-3">

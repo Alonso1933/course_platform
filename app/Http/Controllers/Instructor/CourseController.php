@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use App\Models\Course;
 use App\Models\Level;
 use App\Models\Price;
+use Illuminate\Support\Facades\Storage;
 
 class CourseController extends Controller
 {
@@ -44,11 +45,20 @@ class CourseController extends Controller
             'description' => 'required',
             'category_id' => 'required',
             'level_id' => 'required',
-            'price_id' => 'required'
+            'price_id' => 'required',
+            'file' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048'
         ]);
 
         $course = Course::create($request->all());
 
+        if ($request->file('file')) {
+            $url = Storage::put('public/courses', $request->file('file'));
+
+            $course->image()->create([
+                'url' => $url
+            ]);
+        }
+        
         return redirect()->route('instructor.courses.edit', compact('course'));
     }
 

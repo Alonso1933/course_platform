@@ -33,4 +33,17 @@ class CoursesLessons extends Component
     public function edit(Lesson $lesson) {
         $this->lesson = $lesson;
     }
+
+    public function update() {
+        if ($this->lesson->platform_id == 2) {
+            $this->rules['lesson.url'] = ['required', 'regex:/\/\/(www\.)?vimeo.com\/(\d+)($|\/)/'];
+        }
+
+        $this->validate(); 
+
+        $this->lesson->save();
+        $this->lesson = new Lesson();
+
+        $this->section = Section::find($this->section->id);
+    }
 }

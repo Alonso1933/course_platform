@@ -17,7 +17,7 @@
 
                         <div class="flex items-center mt-3">
                             <label class="w-32">Plataforma: </label>
-                            <select wire:model.live="lesson.platform.id" class="form-input-css">
+                            <select wire:model="lesson.platform_id" class="form-input-css">
                                 @foreach ($platforms as $platform)
                                     <option value="{{$platform->id}}">{{$platform->id}} .-  {{$platform->name}}</option>
                                 @endforeach

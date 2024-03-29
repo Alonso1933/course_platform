@@ -10,16 +10,16 @@
                             <label class="w-32">Nombre: </label>
                             <input wire:model.live="lesson.name" class="form-input-css">
     
-                            @error('lesson.name')
-                                <span class="text-xs text-red-500">{{$message}}</span>
-                            @enderror
                         </div>
+                        @error('lesson.name')
+                            <span class="text-xs text-red-500">{{$message}}</span>
+                        @enderror
 
                         <div class="flex items-center mt-3">
                             <label class="w-32">Plataforma: </label>
                             <select wire:model.live="lesson.platform.id" class="form-input-css">
                                 @foreach ($platforms as $platform)
-                                    <option value="{{$platform->id}}">{{$platform->name}}</option>
+                                    <option value="{{$platform->id}}">{{$platform->id}} .-  {{$platform->name}}</option>
                                 @endforeach
                             </select>
                         </div>
@@ -27,15 +27,14 @@
                         <div class="flex items-center mt-3">
                             <label class="w-32">URL: </label>
                             <input wire:model.live="lesson.url" class="form-input-css">
-    
-                            @error('lesson.url')
-                                <span class="text-xs text-red-500">{{$message}}</span>
-                            @enderror
                         </div>
+                        @error('lesson.url')
+                            <span class="text-xs text-red-500">{{$message}}</span>
+                        @enderror
 
                         <div class="mt-3 flex justify-end">
                             <button class="text-sm btn btn-danger">Cancelar</button>
-                            <button class="text-sm btn btn-primary ml-2">Actualizar</button>
+                            <button class="text-sm btn btn-primary ml-2" wire:click="update">Actualizar</button>
                         </div>
                     </div>
                 @else

@@ -14,9 +14,9 @@
     cursor: pointer;
 }
 
-.btn-danger, button[type=button].btn-danger {
+.btn-danger, button[type=button].btn-danger, button[type=submit] {
     @apply bg-red-500 text-white;
 }
-.btn-danger:hover, button[type=button].btn-danger {
+.btn-danger:hover, button[type=button].btn-danger, button[type=submit]:hover {
     @apply bg-red-700;
 }

@@ -31,7 +31,7 @@
                 <aside>
                     <h1 class="font-bold text-lg mb-4">Edición del curso</h1>
         
-                    <ul class="text-sm text-gray-600">
+                    <ul class="text-sm text-gray-600 mb-4">
                         <li class="leading-7 mb-1 border-l-4 @routeIs('instructor.courses.edit', $course) border-indigo-500 @else border-transparent @endif pl-2">
                             <a href="{{route('instructor.courses.edit', $course)}}">Información del curso</a>
                         </li>
@@ -45,6 +45,24 @@
                             <a href="{{route('instructor.courses.students', $course)}}">Estudiantes</a>
                         </li>
                     </ul>
+
+                    @switch($course->status)
+                        @case(1)
+                            <form action="{{route('instructor.courses.status', $course)}}" method="POST">
+                                @csrf
+        
+                                <button type="submit" class="btn btn-danger">Solicitar revisión</button>
+                            </form>
+                            @break
+                        @case(2)
+                            Este curso se encuentra en revision
+                            @break
+                        @case(3)
+                            Este curso se encuentra publicado
+                            @break
+                        @default
+                            
+                    @endswitch
                 </aside>
         
                 <main class="col-span-4 card">

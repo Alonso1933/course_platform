@@ -31,6 +31,8 @@ class CoursesLessons extends Component
     }
 
     public function edit(Lesson $lesson) {
+        $this->resetValidation();
+
         $this->lesson = $lesson;
     }
 

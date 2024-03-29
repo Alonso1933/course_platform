@@ -33,7 +33,7 @@
                         @enderror
 
                         <div class="mt-3 flex justify-end">
-                            <button class="text-sm btn btn-danger">Cancelar</button>
+                            <button class="text-sm btn btn-danger" wire:click="cancel">Cancelar</button>
                             <button class="text-sm btn btn-primary ml-2" wire:click="update">Actualizar</button>
                         </div>
                     </div>

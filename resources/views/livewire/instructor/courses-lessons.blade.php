@@ -53,8 +53,12 @@
                             <button class="btn btn-danger text-sm ml-1" wire:click="destroy({{$item}})">Eliminar</button>
                         </div>
 
-                        <div>
+                        <div class="mb-4">
                             @livewire('instructor.lesson-description', ['lesson' => $item], key($item->id))
+                        </div>
+
+                        <div>
+                            @livewire('instructor.lesson-resource', ['lesson' => $item], key($item->id))
                         </div>
                     </div>
                 @endif

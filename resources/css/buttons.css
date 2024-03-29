@@ -6,10 +6,10 @@
     @apply block text-center w-full mt-4 
 }
 
-.btn-primary, button[type=submit].btn-primary {
+.btn-primary, button[type=submit].btn-primary, input[type=submit].btn-primary {
     @apply bg-blue-500 text-white;
 }
-.btn-primary:hover, button[type=submit].btn-primary:hover {
+.btn-primary:hover, button[type=submit].btn-primary:hover, input[type=submit].btn-primary:hover {
     @apply bg-blue-700;
     cursor: pointer;
 }

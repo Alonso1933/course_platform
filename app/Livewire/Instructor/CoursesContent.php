@@ -5,9 +5,12 @@ namespace App\Livewire\Instructor;
 use App\Models\Course;
 use App\Models\Section;
 use Livewire\Component;
+use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 
 class CoursesContent extends Component
 {
+    use AuthorizesRequests;
+
     public $course, $section, $name;
 
     protected $rules = [
@@ -17,6 +20,8 @@ class CoursesContent extends Component
     public function mount(Course $course) {
         $this->course = $course;
         $this->section = new Section();
+
+        $this->authorize('dicatated', $course);
     }
 
     public function render()

@@ -49,8 +49,8 @@
                         <p class="text-sm">Enlace: <a href="{{$item->url}}" class="text-blue-400 hover:text-blue-800" target="_blank">{{$item->url}}</a></p>
 
                         <div class="mt-2">
-                            <button class="btn btn-primary text-sm" wire:click='edit({{$item}})'>Editar</button>
-                            <button class="btn btn-danger text-sm ml-1">Eliminar</button>
+                            <button class="btn btn-primary text-sm" wire:click="edit({{$item}})">Editar</button>
+                            <button class="btn btn-danger text-sm ml-1" wire:click="destroy({{$item}})">Eliminar</button>
                         </div>
                     </div>
                 @endif

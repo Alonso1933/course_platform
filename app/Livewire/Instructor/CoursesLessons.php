@@ -73,6 +73,12 @@ class CoursesLessons extends Component
         $this->section = Section::find($this->section->id);
     }
 
+    public function destroy(Lesson $lesson) {
+        $lesson->delete();
+
+        $this->section = Section::find($this->section->id);
+    }
+
     public function cancel() {
         $this->lesson = new Lesson();
     }

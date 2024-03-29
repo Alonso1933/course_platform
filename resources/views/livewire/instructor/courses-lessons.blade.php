@@ -5,7 +5,7 @@
             <div class="card-body">
 
                 @if ($lesson->id == $item->id)
-                    <div> {{-- Lecciones --}}
+                    <form wire:submit.prevent="update"> {{-- Lecciones --}}
                         <div class="flex items-center">
                             <label class="w-32">Nombre: </label>
                             <input wire:model.live="lesson.name" class="form-input-css">
@@ -33,10 +33,10 @@
                         @enderror
 
                         <div class="mt-3 flex justify-end">
-                            <button class="text-sm btn btn-danger" wire:click="cancel">Cancelar</button>
-                            <button class="text-sm btn btn-primary ml-2" wire:click="update">Actualizar</button>
+                            <button type="button" class="text-sm btn btn-danger" wire:click="cancel">Cancelar</button>
+                            <button type="submit" class="text-sm btn btn-primary ml-2">Actualizar</button>
                         </div>
-                    </div>
+                    </form>
                 @else
                     <header>
                         <h4><i class="far fa-play-circle text-blue-500 mr-1"></i> Lección: {{$item->name}}</h4>
@@ -48,9 +48,13 @@
                         <p class="text-sm">Plataforma: {{$item->platform->name}}</p>
                         <p class="text-sm">Enlace: <a href="{{$item->url}}" class="text-blue-400 hover:text-blue-800" target="_blank">{{$item->url}}</a></p>
 
-                        <div class="mt-2">
+                        <div class="my-2">
                             <button class="btn btn-primary text-sm" wire:click="edit({{$item}})">Editar</button>
                             <button class="btn btn-danger text-sm ml-1" wire:click="destroy({{$item}})">Eliminar</button>
+                        </div>
+
+                        <div>
+                            @livewire('instructor.lesson-description', ['lesson' => $item], key($item->id))
                         </div>
                     </div>
                 @endif

@@ -1,7 +1,7 @@
 {{-- Success is as dangerous as failure. --}}
 <div>
     @foreach ($section->lessons as $item)
-        <article class="card mt-4">
+        <article class="card mt-4" x-data="{open: false}">
             <div class="card-body">
 
                 @if ($lesson->id == $item->id)
@@ -39,10 +39,10 @@
                     </form>
                 @else
                     <header>
-                        <h4><i class="far fa-play-circle text-blue-500 mr-1"></i> Lección: {{$item->name}}</h4>
+                        <h4 x-on:click="open = !open" class="cursor-pointer hover:text-blue-500"><i class="far fa-play-circle text-blue-500 mr-1"></i> Lección: {{$item->name}}</h4>
                     </header>
 
-                    <div>
+                    <div x-show="open">
                         <hr class="my-2">
 
                         <p class="text-sm">Plataforma: {{$item->platform->name}}</p>

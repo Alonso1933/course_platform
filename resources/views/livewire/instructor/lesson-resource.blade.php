@@ -1,10 +1,10 @@
 {{-- A good traveler has no fixed plans and is not intent upon arriving. --}}
-<div class="card">
+<div class="card" x-data="{open: false}">
     <div class="card-body bg-gray-100">
         <header>
-            <h5>Recursos de la lección</h5>
+            <h5 x-on:click="open = !open" class="cursor-pointer hover:text-blue-500">Recursos de la lección</h5>
 
-            <div>
+            <div x-show="open">
                 <hr class="my-2">
                 
                 @if ($lesson->resource)

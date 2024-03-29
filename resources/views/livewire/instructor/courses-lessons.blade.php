@@ -57,4 +57,53 @@
             </div>
         </article>
     @endforeach
+
+    <div class="mt-4" x-data="{open: false}">
+        <a x-show="!open" x-on:click="open = true" class="flex items-center cursor-pointer">
+            <i class="far fa-plus-square text-2xl text-red-500 mr-2"></i>
+            Agregar nueva lección
+        </a>
+
+        <article class="card" x-show="open">
+            <div class="card-body ">
+                <h3 class="text-xl font-bold mb-4">Agregar nueva lección</h3>
+                
+                <div class="mb-4">
+                    <div class="flex items-center">
+                        <label class="w-32">Nombre: </label>
+                        <input wire:model.live="name" class="form-input-css">
+
+                    </div>
+                    @error('name')
+                        <span class="text-xs text-red-500">{{$message}}</span>
+                    @enderror
+
+                    <div class="flex items-center mt-3">
+                        <label class="w-32">Plataforma: </label>
+                        <select wire:model="platform_id" class="form-input-css">
+                            @foreach ($platforms as $platform)
+                                <option value="{{$platform->id}}">{{$platform->id}} .-  {{$platform->name}}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                    @error('platform_id')
+                        <span class="text-xs text-red-500">{{$message}}</span>
+                    @enderror
+
+                    <div class="flex items-center mt-3">
+                        <label class="w-32">URL: </label>
+                        <input wire:model.live="url" class="form-input-css">
+                    </div>
+                    @error('url')
+                        <span class="text-xs text-red-500">{{$message}}</span>
+                    @enderror
+                </div>
+
+                <div class="flex justify-end">
+                    <button class="text-sm btn btn-danger" x-on:click="open = false"">Cancelar</button>
+                    <button class="text-sm btn btn-primary ml-2" wire:click="store">Agregar</button>
+                </div>
+            </div>
+        </article>
+    </div>
 </div>

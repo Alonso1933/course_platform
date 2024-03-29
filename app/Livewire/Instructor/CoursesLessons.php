@@ -9,7 +9,7 @@ use Livewire\Component;
 
 class CoursesLessons extends Component
 {
-    public $section, $lesson, $platforms;
+    public $section, $lesson, $platforms, $name, $platform_id = 1, $url;
 
     protected $rules = [
         'lesson.name' => 'required',
@@ -28,6 +28,30 @@ class CoursesLessons extends Component
     public function render()
     {
         return view('livewire.instructor.courses-lessons');
+    }
+
+    public function store() {
+        $rules = [
+            'name' => 'required',
+            'platform_id' => 'required',
+            'url' => ['required', 'regex:%^ (?:https?://)? (?:www\.)? (?: youtu\.be/ | youtube\.com (?: /embed/ | /v/ | /watch\?v= ) ) ([\w-]{10,12}) $%x'],
+        ];
+
+        if ($this->platform_id == 2) {
+            $rules['url'] = ['required', 'regex:/\/\/(www\.)?vimeo.com\/(\d+)($|\/)/'];
+        }
+
+        $this->validate($rules);
+
+        Lesson::create([
+            'name' => $this->name,
+            'platform_id' => $this->platform_id,
+            'url' => $this->url,
+            'section_id' => $this->section->id
+        ]);
+
+        $this->reset(['name', 'platform_id', 'url']);
+        $this->section = Section::find($this->section->id);
     }
 
     public function edit(Lesson $lesson) {

@@ -13,4 +13,12 @@ class CourseController extends Controller
 
         return view('admin.courses.index', compact('courses'));
     }
+
+    public function show(Course $course) {
+        return view('admin.courses.show', compact('course'));
+    }
+
+    public function approved(Course $course) {
+        return "Aqui se aprobara un curso";
+    }
 }

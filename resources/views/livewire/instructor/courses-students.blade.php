@@ -1,8 +1,5 @@
 {{-- The Master doesn't talk, he acts. --}}
 <div class="card-body">
-    <x-slot name="course">
-        {{$course->slug}}
-    </x-slot>
 
     <h2 class="text-2xl font-bold mb-4">Estudiantes del curso</h2>
 

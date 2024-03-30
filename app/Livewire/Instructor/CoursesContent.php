@@ -26,7 +26,7 @@ class CoursesContent extends Component
 
     public function render()
     {
-        return view('livewire.instructor.courses-content')->layout('layouts.instructor');
+        return view('livewire.instructor.courses-content')->layout('layouts.instructor', ['course' => $this->course]);
     }
 
     public function store(){

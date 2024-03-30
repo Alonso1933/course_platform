@@ -1,8 +1,5 @@
 {{-- In work, do what you enjoy. --}}
 <div>
-    <x-slot name="course">
-        {{$course->slug}}
-    </x-slot>
 
     <div class="card-body text-gray-600">
         <h2 class="text-2xl font-bold">Lecciones del curso</h1>

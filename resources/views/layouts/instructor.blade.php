@@ -27,7 +27,7 @@
             @livewire('navigation-menu')
 
             <!-- Page Content -->
-            <div class="container py-8 grid grid-cols-5">
+            <div class="container py-8 grid grid-cols-5 gap-6">
                 <aside>
                     <h1 class="font-bold text-lg mb-4">Edición del curso</h1>
         
@@ -55,10 +55,18 @@
                             </form>
                             @break
                         @case(2)
-                            Este curso se encuentra en revision
+                            <div class="card text-gray-500">
+                                <div class="card-body">
+                                    Este curso se encuentra en revision
+                                </div>
+                            </div>
                             @break
                         @case(3)
-                            Este curso se encuentra publicado
+                            <div class="card text-gray-500">
+                                <div class="card-body">
+                                    Este curso se encuentra publicado
+                                </div>
+                            </div>
                             @break
                         @default
                             

@@ -7,7 +7,35 @@
 @stop
 
 @section('content')
-    <p>Welcome to this beautiful admin panel.</p>
+    <div class="card">
+        <div class="card-body">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nombre</th>
+                        <th>Categoría</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                    @foreach ($courses as $course)
+                        <tr>
+                            <td>{{$course->id}}</td>
+                            <td>{{$course->title}}</td>
+                            <td>{{$course->category->name}}</td>
+                            <td> <a class="btn btn-primary">Revisar</a> </td>
+                        </tr>
+                    @endforeach
+                <tbody>
+
+                </tbody>
+            </table>
+        </div>
+
+        <div class="card-footer">
+            {{$courses->links('vendor.pagination.bootstrap-4')}}
+        </div>
+    </div>
 @stop
 
 @section('css')

@@ -331,10 +331,10 @@ return [
             'active'    => ['admin/users*'],
             'can'           => 'Leer usuarios'
         ],
-        ['header' => 'account_settings'],
+        ['header' => 'Opciones de curso'],
         [
-            'text' => 'profile',
-            'url'  => 'admin/settings',
+            'text' => 'Pendientes de aprobación ',
+            'route'  => 'admin.courses.index',
             'icon' => 'fas fa-fw fa-user',
         ],
         [

@@ -37,15 +37,15 @@ class Lesson extends Model
 
     //Relacion uno a uno polimorfica
     public function resource() {
-        return $this->morphOne('App\Model\Resource', 'resourceable');
+        return $this->morphOne('App\Models\Resource', 'resourceable');
     }
 
     //Relacion uno a muchos polimorfica
     public function comments() {
-        return $this->morphMany('App\Model\Comment', 'commentable');
+        return $this->morphMany('App\Models\Comment', 'commentable');
     }
 
     public function reactions() {
-        return $this->morphMany('App\Model\Reaction', 'reactionable');
+        return $this->morphMany('App\Models\Reaction', 'reactionable');
     }
 }

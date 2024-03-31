@@ -18,8 +18,8 @@ class LessonFactory extends Factory
     {
         return [
             'name' => $this->faker->sentence(),
-            'url' => 'https://youtu.be/U5fNZKaxTnI?si=_P0-6tE3-lyCiJ3U',
-            'iframe' => '<iframe width="560" height="315" src="https://www.youtube.com/embed/U5fNZKaxTnI?si=_P0-6tE3-lyCiJ3U" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>',
+            'url' => 'https://www.youtube.com/watch?v=U5fNZKaxTnI',
+            'iframe' => '<iframe width="560" height="315" src="https://www.youtube.com/watch?v=U5fNZKaxTnI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>',
             'platform_id' => 1
         ];
     }

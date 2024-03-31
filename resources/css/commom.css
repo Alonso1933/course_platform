@@ -28,3 +28,15 @@
 	height: 100%;
 	border: 0;
 }
+
+.form-input-css, input[type=text]{
+	@apply w-full border-2 border-gray-300 bg-white h-10 px-5 pr-16 rounded-lg text-sm focus:outline-none;
+}
+
+input[type=file]{
+	@apply block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50;
+}
+
+.span-error {
+	@apply text-xs text-red-500;
+}
